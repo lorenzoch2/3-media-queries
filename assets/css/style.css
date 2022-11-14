@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+}
+
+.nav{
+    background-color: royalblue;
+    color: white;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.menu{
+    display: none;
+}
+
+.filtros{
+    background-color: lightgray;
+    padding: 7px;
+    grid-area: filtro;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filtros select{
+    width: 200px;
+}
+
+.main{
+    padding: 7px;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+}
+
+.card{
+    background-color: white;
+    border: 1px solid darkslateblue;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card button{
+    margin: 3px;
+    width: 40%;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.paginador{
+    padding: 7px;
+    grid-area: pag;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.paginador button{
+    background-color: bisque;
+    border: none;
+    color: royalblue;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.footer{
+    background-color: darkblue;
+    color: white;
+    padding: 7px;
+    grid-area: foot;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.grid{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+    'nav'
+    'filtro'
+    'main'
+    'pag'
+    'foot';
+}
+
+@media (min-width: 576px){
+    .grid{
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        'nav filtro'
+        'nav main'
+        'foot pag';
+    }
+    .main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .card img{
+        height: 215px;
+        object-fit: cover;
+    }
+    .imagen{
+        height: 100%;
+    }
+    .menu{
+        display: block;
+        text-align: center;
+    }
+    .menu div{
+        padding: 5px;
+    }
+    .nav .fa-bars{
+        display: none;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 7px;
+    }
+    .empresa{
+        text-align: center;
+    }
+    .card button{
+        width: 100%;
+    }
+}
